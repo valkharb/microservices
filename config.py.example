@@ -29,6 +29,11 @@ DATABASE = {
     'DB_NAME': os.getenv('DB_NAME', 'test'),
 }
 
+REDIS = {
+    'host': os.getenv('REDIS_HOST', 'localhost'),
+    'port': os.getenv('REDIS_PORT', '6379'),
+}
+
 MAIL_SERVER = 'host'
 MAIL_PORT = 111
 MAIL_USE_TLS = True
