@@ -1,0 +1,42 @@
+import os
+import uuid
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+CSRF_ENABLED = True
+CSRF_TOKEN_TTL = 86400
+SESSION_COOKIE_HTTPONLY = True
+REMEMBER_COOKIE_HTTPONLY = True
+REMEMBER_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+MASTER_KEY = None
+MASTER_KEY_NAME = "Master"
+PERMIT_NEW = True
+BCRYPT_ROUNDS = 12
+GZIP_HERE = True
+
+SECRET_KEY = uuid.uuid4().hex
+
+DEFAULT_STATUS_CODE = 200
+JSON_CONTENT_TYPE = 'application/json'
+
+DATABASE = {
+    'DB_USER': os.getenv('DB_USER', 'root'),
+    'DB_PASSWORD': os.getenv('DB_PASSWORD', '1111'),
+    'DB_HOSTS': os.getenv('DB_HOSTS', '["localhost"]'),
+    'DB_PORT': os.getenv('DB_PORT', '27017'),
+    'DB_NAME': os.getenv('DB_NAME', 'test'),
+}
+
+MAIL_SERVER = 'host'
+MAIL_PORT = 111
+MAIL_USE_TLS = True
+MAIL_USERNAME = 'your.email@ya.ru'          # enter your email here
+MAIL_DEFAULT_SENDER = 'your.email@ya.ru'    # enter your email here
+MAIL_PASSWORD = 'password'                  # enter your password here
+
+ROLES = [
+    'admin',
+    'user',
+]
